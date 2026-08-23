@@ -163,3 +163,67 @@ Y/cykHipa+te1pOhv7wYPYtZ9orGBV5SGOJm4NrB3K1aJar0RfzxC3ikr7Dyc6Qw
 qDTBU39CluVIQeuQRgwG3MuSxl7zRERDRilGoKb8uY45JzmxWuKxrfwT/478JuHU
 /oTxUFqOl2stKnn7QGTq8z29W+GgBLCXSBxC9epaHM0myFH/FJlniXJfHeytWt0=
 -----END CERTIFICATE-----
+
+1. Mobile CI/CD Pipeline Engineering
+ Design, build, and maintain CI/CD pipelines for iOS and Android release trains
+ Develop and maintain Jenkins Shared Libraries (Groovy) as reusable, modular pipeline steps
+ Integrate Fastlane for build, signing, and deployment automation
+ Manage code signing and provisioning: iOS certificates/profiles, Android keystores
+ Automate app store submissions (TestFlight, Google Play Console API)
+ Implement build artifact versioning and semantic release tagging
+ Support branching strategies (GitFlow, trunk-based) aligned to mobile release cadence
+ Integrate automated testing: unit, UI/instrumentation, device farms (Firebase Test Lab, AWS Device Farm, BrowserStack)
+ Configure parallelized/matrix builds across device and OS version combinations
+ Optimize build caching and dependency resolution (Gradle, CocoaPods, Swift Package Manager)
+ Wire in feature-flag / remote-config gating for staged rollouts
+ Gate promotion on crash/release health signals (Crashlytics, Sentry)
+ Build app-wrapping and MDM packaging pipelines (e.g., Intune App Wrapping)
+ Design rollback and hotfix pipeline paths
+ Build a dispatcher-style routing layer for multi-tool pipelines (route by tool/platform parameters)
+2. Site Reliability Engineering
+ Define and track SLIs/SLOs for mobile backend services and CI/CD infrastructure
+ Design and enforce error budget policies
+ Run on-call rotations and maintain incident response runbooks
+ Build observability stack: metrics, logs, traces (Prometheus/Grafana, ELK, Datadog)
+ Design alerting for signal quality — actionable alerts only, minimize fatigue
+ Plan capacity for build farms, Jenkins agents/controllers, and CI infra scaling
+ Run chaos engineering / fault-injection tests against pipeline infrastructure
+ Facilitate blameless post-incident reviews and track remediation items
+ Manage CI/CD infrastructure as code (Terraform, Ansible)
+ Own Jenkins controller/agent high availability, backup, and disaster recovery
+ Optimize build infra cost (spot instances, agent autoscaling)
+ Maintain uptime/SLA dashboards for the internal developer platform
+3. Security / DevSecOps
+ Integrate SAST/DAST into pipelines (SonarQube, Checkmarx, Semgrep)
+ Run software composition analysis / dependency vulnerability scanning (Snyk, OWASP Dependency-Check)
+ Manage secrets centrally (Vault, AWS Secrets Manager) — eliminate hardcoded credentials
+ Integrate mobile app hardening/code protection tooling (zShield, Guardsquare/DexGuard, ProGuard obfuscation)
+ Automate binary/app shielding steps (anti-tamper, anti-debug, anti-repackaging)
+ Implement supply chain security: SBOM generation, artifact signing, build provenance (SLSA framework)
+ Scan container/build-agent images for vulnerabilities
+ Automate compliance evidence collection (SOC 2, GDPR, app store security requirements)
+ Enforce role-based access control across Jenkins and pipeline systems
+ Maintain audit logging and tamper-evident pipeline execution history
+ Automate rotation of signing keys and credentials
+ Threat-model the CI/CD attack surface (poisoned pipeline execution, dependency confusion)
+ Enforce security gates (fail-on-critical-vuln) with a defined exception/override workflow
+4. AI Adaptability & Intelligent Pipeline Automation
+ Use AI-assisted log summarization for build failure triage and root-cause analysis
+ Detect and auto-quarantine flaky tests using predictive models
+ Apply ML-based anomaly detection to build time/performance regressions
+ Use LLMs to generate/document pipeline configs (self-documenting Jenkinsfiles)
+ Integrate AI-assisted code review commentary into PR workflows
+ Stand up ChatOps (Slack/Teams bots with LLM backends) for deployment approvals and status queries
+ Apply AI-driven test selection/prioritization to cut CI runtime
+ Auto-generate release notes/changelogs via LLM summarization of commit history
+ Build self-healing pipelines with auto-remediation for known failure patterns
+ Feed incident and failure data back into pipeline heuristics (continuous learning loop)
+ Require human-in-the-loop approval gates for any AI-driven auto-remediation action
+ Pilot AI coding agents (e.g., Claude Code) for shared-library maintenance and refactors
+5. Cross-Cutting / Platform Engineering
+ Build a self-service internal developer platform via standardized Shared Library templates
+ Write and maintain onboarding docs for shared-library consumers
+ Standardize pipeline governance across teams (naming, agentLabel node-allocation patterns, versioning)
+ Track DORA metrics (build time, lead time for changes, deployment frequency, change failure rate)
+ Evaluate and select vendors/tools (Guardsquare, zShield, Intune, MDM providers)
+ Partner cross-functionally with mobile engineering, security, and compliance teams
